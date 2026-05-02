@@ -23,7 +23,7 @@ public class DeleteCategoryTest
         var repositoryMock = _fixture.GetRepositoryMock();
         var unitOfWorkMock = _fixture.GetUnitOfWork();
 
-        var validCategoryEntity = _fixture.InstantiateValidCategory();
+        var validCategoryEntity = _fixture.GetValidCategory();
         var input = new UseCasesAlias.DeleteCategoryInputDTO(validCategoryEntity.Id);
 
         repositoryMock
@@ -33,9 +33,6 @@ public class DeleteCategoryTest
                 It.IsAny<CancellationToken>()
             )
         ).ReturnsAsync(validCategoryEntity);
-
-
-
 
         var useCase = new UseCasesAlias.DeleteCategoryUseCase(
             repositoryMock.Object,
@@ -69,7 +66,7 @@ public class DeleteCategoryTest
         var repositoryMock = _fixture.GetRepositoryMock();
         var unitOfWorkMock = _fixture.GetUnitOfWork();
 
-        var validCategoryEntity = _fixture.InstantiateValidCategory();
+        var validCategoryEntity = _fixture.GetValidCategory();
         var input = new UseCasesAlias.DeleteCategoryInputDTO(validCategoryEntity.Id);
 
         repositoryMock
