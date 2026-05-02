@@ -10,7 +10,8 @@ public class ListCategoriesOutputDTO : PaginateListOutput<CategoryOutputDTO>
         int page, 
         int perPage, 
         int total, 
-        IReadOnlyList<CategoryOutputDTO> items) : base(page, perPage, total, items)
+        IReadOnlyList<CategoryOutputDTO> items
+    ) : base(page, perPage, total, items)
     {
     }
 }

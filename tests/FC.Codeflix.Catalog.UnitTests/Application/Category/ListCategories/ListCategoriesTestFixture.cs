@@ -4,6 +4,8 @@ using Fc.Codeflix.Catalog.Application.Interfaces;
 using FC.Codeflix.Catalog.Domain.Repository;
 using FC.Codeflix.Catalog.UnitTests.Common;
 using Moq;
+using Fc.Codeflix.Catalog.Application.UseCases.Category.ListCategories;
+using FC.Codeflix.Catalog.Domain.SeedWork.SearchableRepository;
 
 namespace FC.Codeflix.Catalog.UnitTests.Application.Category.ListCategories;
 
@@ -61,5 +63,19 @@ public class ListCategoriesTestFixture : BaseFixture
 
     public Mock<ICategoryRepository> GetRepositoryMock() => new();
     public Mock<IUnitOfWork> GetUnitOfWork() => new();
+
+    public ListCategoriesInputDTO GetExampleInput()
+    {
+        Random random = new Random();
+
+        return new ListCategoriesInputDTO
+        (
+            page: random.Next(1,10),
+            perPage: random.Next(15,100),
+            search: Faker.Commerce.ProductName(),
+            sort: Faker.Commerce.ProductName(),
+            dir: random.Next(0,10) > 5 ? SearchOrder.Asc : SearchOrder.Desc
+        );
+    }
 
 }
