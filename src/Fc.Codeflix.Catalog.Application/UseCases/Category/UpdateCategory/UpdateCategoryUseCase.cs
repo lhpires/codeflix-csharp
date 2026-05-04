@@ -2,7 +2,6 @@
 using Fc.Codeflix.Catalog.Application.Interfaces;
 using Fc.Codeflix.Catalog.Application.UseCases.Category.Common;
 using FC.Codeflix.Catalog.Domain.Repository;
-using MediatR;
 
 namespace Fc.Codeflix.Catalog.Application.UseCases.Category.UpdateCategory;
 
